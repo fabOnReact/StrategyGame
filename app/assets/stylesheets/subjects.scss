@@ -1,0 +1,24 @@
+/*
+// Place all the styles related to the subjects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
+table.table {
+	width: 550px;
+	text-align: left;
+}
+
+.actions {
+	width: 100%;
+}
+/*table, th, td {
+    border: 1px solid black;
+}*/
+
+.table.show table, .table.show tr, .table.show th {
+	border: solid 1px grey;
+	width: 40%;
+}
+
+.form-horizontal .control-label {
+	text-align: left;
+}
