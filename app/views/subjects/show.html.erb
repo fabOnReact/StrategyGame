@@ -68,4 +68,26 @@
     <%= @subject.updated_at %>
     </td>
   </tr>
+  <% @subject.pages.each do |page| %>
+  <tr>
+    <th>
+    Page ID
+    </th>
+  </tr>
+  <tr>
+    <td>
+    <%= page.id %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+    Page Name
+    </th>
+  </tr>
+  <tr>
+    <td>
+    <%= page.name %>
+    </td>
+  </tr>
+  <% end %>
 </table>

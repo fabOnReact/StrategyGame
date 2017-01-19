@@ -1,2 +1,46 @@
 <h1>Pages#delete</h1>
 <p>Find me in app/views/pages/delete.html.erb</p>
+
+<%= button_to "Previous Page", {:action => "index"}, :method => :get %>
+
+<% if !flash[:notice].blank? %>
+	<div class="alert alert-success">
+		<%= flash[:notice] %>
+	</div>
+<% end %>
+
+<p>Are you sure you want to delete the following entry?</p>
+
+<% if !flash[:notice].blank? %>
+  <div class="alert alert-success">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<% if !flash[:alert].blank? %>
+  <div class="alert alert-warning">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<%= form_for(:page, :url => {:action => "destroy", :id => @page.id}, method: :delete, html: {:class => "form-horizontal"}) do |f| %>
+	<div class="form-group">
+	<%= f.label :name, :class =>"col-md-1 control-label" %>
+		<div class="col-md-2">
+			<%= f.text_field :name, :class => "form-control", :disabled => "true"  %>
+		</div>
+	</div>
+	<div class="form-group">
+	<%= f.label :position, :class =>"col-md-1 control-label" %>
+		<div class="col-md-2">
+			<%= f.text_field :position, :class => "form-control", :disabled => "true" %>
+		</div>
+	</div>
+	<div class="form-group">
+	<%= f.label :visible, :class =>"col-md-1 control-label" %>
+		<div class="col-md-2">
+			<%= f.text_field :visible, :class => "form-control", :disabled => "true"  %>
+		</div>
+	</div>
+	<%= submit_tag("Delete Entry") %>
+<% end %>

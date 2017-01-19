@@ -5,7 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
- 
+
+# Creating Admin Users, Sections and Editings
 me = AdminUser.create(:name => :Fabrizio, :surname => :Bertoglio)
 
 section = Section.create(:name => "Section One", :position => 1)
@@ -19,6 +20,26 @@ edit.save
 
 me.section_edits(true)	
 
+# Creating Pages, Subjects ...
+
+new_page = Page.new(:name => "First Page", :position => 1, :visible => 1)
+new_subject = Subject.new(:name => "First Subject", :position => 1, :visible => 1)
+new_page.subject = new_subject
+new_page.save
+
+# Connecting Page with the AdminUser me with the Join AdminUser (editors)
+new_page.editors << me
+
+# Creating a second Page
+new_page = Page.new(:name => "Second Page", :position => 2, :visible => 1)
+new_subject = Subject.new(:name => "Second Subject", :position => 2, :visible => 1)
+new_page.subject = new_subject
+new_page.save
+
+# Connecting Page with the AdminUser me with the Join AdminUser (editors)
+new_page.editors << me 
+
+# Creating Developers, Customers and Tasks
 new_developer = Developer.new(:firstname => :Fabrizio, :surname => :Bertoglio, :role => "full-stack Developer", :experience => 1)
 new_developer.save
 
