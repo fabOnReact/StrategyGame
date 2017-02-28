@@ -1,30 +1,23 @@
 <h1>Subjects#index</h1>
 
-<% if !flash[:notice].blank? %>
-	<div class="alert alert-success">
-		<%= flash[:notice] %>
-	</div>
-<% end %>
-
-	<table class="table">
-	  <tr>
-	    <th>Subject Name</th>
-	    <th>Subject Position</th>
-	    <th class="actions header">Actions</th>
-	  </tr>
+<table class="table">
+  <tr>
+    <th>Subject Name</th>
+    <th>Subject Position</th>
+    <th class="actions header">Actions</th>
+  </tr>
 <% @subjects.each do |subject| %>
-   	  <tr>
-	    <td><%= subject.name %></td>
-	    <td><%= subject.position %> </td>
-	    <td class="actions">
-	    	<%= link_to("Show", {:action => "show", :id => subject.id }) %>
-	    	<%= link_to("Edit", {:action => "edit", :id => subject.id}) %>
-	    	<%= link_to("Update", '#') %>
-	    	<%= link_to("Delete", {:action => "delete", :id => subject.id}) %>
-	    	<%= link_to("Create New Page", {:controller => "pages", :action => "new", :id => subject.id}) %>
-	    </td>
-  	  </tr>
+	  <tr>
+    <td><%= subject.name %></td>
+    <td><%= subject.position %> </td>
+    <td class="actions">
+    	<%= link_to("Show", {:action => "show", :id => subject.id }) %>
+    	<%= link_to("Edit", {:action => "edit", :id => subject.id}) %>
+     	<%= link_to("Delete", {:action => "delete", :id => subject.id}) %>
+    	<%= link_to("Create New Page", {:controller => "pages", :action => "new", :id => subject.id}) %>
+    </td>
+ 	  </tr>
 <% end %>
-	</table>
+</table>
 
 <%= button_to "New Entry", {:action => "new"}, :method => :get %>

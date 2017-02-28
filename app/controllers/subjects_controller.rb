@@ -2,6 +2,8 @@ class SubjectsController < ApplicationController
 
   layout "application"
 
+  before_action :confirm_logged_in
+  
   def index
     @subjects = Subject.all 
   end
@@ -50,7 +52,7 @@ class SubjectsController < ApplicationController
 
     if @subject.destroy
       flash[:notice] = "Subject #{@subject.name} deleted successfully"
-      redirect_to action: "index"
+      redirect_to action: "index" 
     else 
       flash[:alert] = "Subject #{@subject.name} was not deleted, please try again"
       render("delete")

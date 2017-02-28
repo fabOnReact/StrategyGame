@@ -1,5 +1,12 @@
 <h1>Main Page</h1>
 
-<a href="player/playerSettings"> This is the link to the playerSettings Html</a> </br>
-
-<%= button_to "New Game", {:controller => "game", :action => "gameSettings"}, :method => :get %>
+<div class="radio row">
+<%= form_for(:player) do |f| %>
+  <%= f.label :kingdom, "Kingdom", class: 'col' %>
+  <%= f.text_field :kingdom, class: 'col' %>
+  <%= f.label :kingdom, "Workouts", class: 'col' %>
+  <%= f.text_field :kingdom, class: 'col' %>
+  <%= f.label :kingdom, "Other", class: 'col'   %>
+  <%= f.text_field :kingdom, class: 'col' %>
+<% end %>
+</div>

@@ -2,13 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-* {
-	margin: 5px 5px;
-}
+/*.radio {
+  display: flex;
+  text-align: center;
+  label {
+    display: block;
+  }  
+  input {
+    width: 30%;
+  }
+}*/
 
-button {
-	padding: 5px 10px;
-	border: solid 1px;
-	background-color: yellow;
-	color: blue;
+.row { 
+	width: 100%;
+	display: block;
+	}
+.col {
+	widht: 20%;
+	display: inline-block;
 }

@@ -1,11 +1,5 @@
 <h1>Subjects#show</h1>
 
-<% if !flash[:notice].blank? %>
-  <div class="alert alert-success">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
-
 <%= link_to("<< Index Page", {:action => :index}) %> 
 <table class="table show">
   <tr>

@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: fabrizio
-  password: Piemonte2787
+  password: <%= ENV['DATABASE_PW'] %>
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -51,4 +51,4 @@ production:
   <<: *default
   database: strategyGame_production
   username: fabrizio
-  password: <%= ENV['STRATEGYGAME_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PW'] %>
